@@ -1,11 +1,20 @@
-import LocalButton from './Button';
+import { useAxios } from "./hooks/useAxios";
+import CustomCard from "./ui/CustomCard";
 
-const App = () => (
-  <div>
-    <h1>Basic Gallery App</h1>
-    <h2>MFE 2</h2>
-    <LocalButton />
-  </div>
-);
+const App = () => {
+  const { data, isPending } = useAxios(
+    "https://jsonplaceholder.typicode.com/albums/",
+  );
+
+  console.log("data", data);
+
+  return (
+    <div>
+      {data?.map((item) => {
+        return <CustomCard key={item.id} item={item} id={item.id} />;
+      })}
+    </div>
+  );
+};
 
 export default App;

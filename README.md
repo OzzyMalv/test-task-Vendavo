@@ -6,6 +6,11 @@ This demos a basic host application loading remote component.
 - `gallery_app` standalone application (cra-based).
 - `recent_app` standalone application (cra-based).
 
+# How to run 
+
+`pnpm run start`, `node v20.11.0`
+
+
 # Running Demo
 
 Run `pnpm run start`. This will build and serve  `container` and `gallery_app` `recent_app` on ports 3001 3002 3003 respectively.
