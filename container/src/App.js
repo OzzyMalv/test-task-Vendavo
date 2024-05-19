@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, CssBaseline, Skeleton, Tab, Tabs } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // curated imports
 const RemoteGallery = React.lazy(() => import("remoteGallery/gallery_app"));
@@ -24,9 +25,10 @@ const App = () => {
         width="100%"
         sx={{ zIndex: 1000 }}
         backgroundColor="background.paper"
+        boxShadow="0 0px 10px rgba(0, 0, 0, 0.3)"
       >
         <Tabs value={tabIndex} onChange={handleChange} centered>
-          <Tab label="Gallery" />
+          <Tab to="/" component={Link} label="Gallery" />
           <Tab label="Recently Viewed" />
         </Tabs>
       </Box>

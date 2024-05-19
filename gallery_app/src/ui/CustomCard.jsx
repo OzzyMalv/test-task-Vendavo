@@ -7,17 +7,18 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const CustomCard = ({ item, id }) => {
-  console.log("card");
-
   return (
     <Card display="flex" sx={{ margin: "20px" }} variant={"outlined"}>
       <Box display="flex" flexDirection="column">
         {item.image && (
           <CardMedia component="img" sx={{ width: 151 }} image="" alt="img" />
         )}
-        <CardContent sx={{ display: "flex", justifyContent: "space-between", gap: "8px" }}>
+        <CardContent
+          sx={{ display: "flex", justifyContent: "space-between", gap: "8px" }}
+        >
           <Typography component="div" variant="h5" flex={1}>
             {item.title}
           </Typography>
@@ -26,12 +27,18 @@ const CustomCard = ({ item, id }) => {
             color="text.secondary"
             component="div"
           >
-            Card Id:{id}
+            Album Id:{id}
           </Typography>
         </CardContent>
         <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
           <CardActions>
-            <Button size="small" variant="outlined">
+            <Button
+              component={Link}
+              to={`/albums/${item.id}`}
+              size="small"
+              variant="outlined"
+              // onClick={handleClickOpen}
+            >
               Open Album
             </Button>
           </CardActions>

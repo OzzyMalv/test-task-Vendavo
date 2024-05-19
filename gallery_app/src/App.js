@@ -1,19 +1,13 @@
-import { useAxios } from "./hooks/useAxios";
-import CustomCard from "./ui/CustomCard";
+import { Routes, Route } from "react-router-dom";
+import Albums from "./pages/Albums";
+import AlbumsDetails from "./pages/AlbumsDetails";
 
 const App = () => {
-  const { data, isPending } = useAxios(
-    "https://jsonplaceholder.typicode.com/albums/",
-  );
-
-  console.log("data", data);
-
   return (
-    <div>
-      {data?.map((item) => {
-        return <CustomCard key={item.id} item={item} id={item.id} />;
-      })}
-    </div>
+    <Routes>
+      <Route path={"/"} element={<Albums />} />
+      <Route path={"/albums/:albumId/"} element={<AlbumsDetails />} />
+    </Routes>
   );
 };
 
