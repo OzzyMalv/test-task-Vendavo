@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useAxios = (url) => {
+export const useAxios = (url, condition = true) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!condition) {
+      return;
+    }
     const fetchData = async () => {
       setIsPending(true);
       try {

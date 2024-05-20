@@ -42,7 +42,6 @@ const CustomCard = ({ item, id }) => {
               to={`/albums/${item.id}`}
               size="small"
               variant="outlined"
-              // onClick={handleClickOpen}
             >
               Open Album
             </Button>
