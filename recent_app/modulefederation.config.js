@@ -5,6 +5,9 @@ module.exports = {
   exposes: {
     "./recent_app": "./src/App.js",
   },
+  remotes: {
+    remoteGallery: 'gallery_app@http://localhost:3002/remoteEntry.js',
+  },
   filename: 'remoteEntry.js',
   shared: {
     ...dependencies,
