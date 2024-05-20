@@ -25,5 +25,5 @@ export const useAxios = (url) => {
     fetchData();
   }, [url]);
 
-  return { data, isPending, error, setData };
+  return { data, isPending, error, setData, setIsPending };
 };

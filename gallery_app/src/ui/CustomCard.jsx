@@ -12,12 +12,17 @@ import { Link } from "react-router-dom";
 const CustomCard = ({ item, id }) => {
   return (
     <Card display="flex" sx={{ margin: "20px" }} variant={"outlined"}>
-      <Box display="flex" flexDirection="column">
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+        sx={{ height: "180px" }}
+      >
         {item.image && (
           <CardMedia component="img" sx={{ width: 151 }} image="" alt="img" />
         )}
         <CardContent
-          sx={{ display: "flex", justifyContent: "space-between", gap: "8px" }}
+          sx={{ display: "flex", justifyContent: "space-between", gap: "8px", alignItems: "center" }}
         >
           <Typography component="div" variant="h5" flex={1}>
             {item.title}
